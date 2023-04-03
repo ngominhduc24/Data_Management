@@ -1,13 +1,15 @@
-import express from 'express'
+// import express from 'express'
+const express = require('express');
 
 let router = express.Router();
 
 const initWebRoutes = (app) => { 
     router.get('/', (req, res) => {
-        res.send('Hello World!');
+        res.render('uploadFile.ejs');
     })
 
     return app.use('/', router)
 } 
 
-export default initWebRoutes;
+// export default initWebRoutes;
+module.exports = initWebRoutes;
