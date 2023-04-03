@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Update user</title>
+</head>
+
+<body>
+    <div class="update-user-container">
+        <form action="/update-user" method="POST">
+            <div>
+                <label>First Name:</label>
+                <input name="firstName" type="text" value="<%= dataUser.firstName%>">
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input name="lastName" type="text" value="<%= dataUser.lastName%>">
+            </div>
+            <div>
+                <label>Email:</label>
+                <input name="email" type="text" value="<%= dataUser.email%>">
+            </div>
+            <div>
+                <label>Address:</label>
+                <input name="address" type="text" value="<%= dataUser.address%>">
+            </div>
+            <input type="text" hidden name="userId" value="<%= dataUser.id%>" />
+                <button type="submit" class="btn-save">Save</button>
+        </form>
+    </div>
+</body>
+
+</html>
