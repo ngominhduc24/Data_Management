@@ -1,9 +1,6 @@
-// import express from 'express'
-const express = require('express');
-// import configviewEngine from './configs/viewEngine.js'
-const configviewEngine = require('./configs/viewEngine.js');
-// import initWebRoutes from './route/web.js'
-const initWebRoutes = require('./route/web.js');
+import express from 'express'
+import configviewEngine from './configs/viewEngine.js'
+import initWebRoutes from './route/web.js'
 
 require('dotenv').config();
 
@@ -27,5 +24,5 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server running at http://127.0.0.1:${port}/`);
 })
