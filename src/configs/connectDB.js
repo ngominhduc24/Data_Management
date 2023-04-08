@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
-require("dotenv").config();
+// require("dotenv").config();
 
-const uri = process.env.MONGO_URI;
+// const uri = process.env.MONGO_URI;
 
-main().catch((err) => console.log(err));
+// main().catch((err) => console.log(err));
 
-async function main() {
-  // await mongoose.connect(uri, {});
-  console.log("Connected to MongoDB successfully!");
-}
+// async function main() {
+//   // await mongoose.connect(uri, {});
+//   console.log("Connected to MongoDB successfully!");
+// }
 
-module.exports = main;
+// module.exports = main;

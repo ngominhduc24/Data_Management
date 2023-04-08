@@ -20,7 +20,7 @@ configviewEngine(app);
 // connectDB.main;
 
 // init all web routes
-// initWebRoutes(app);
+initWebRoutes(app);
 
 // handle 404 not found
 app.use((req, res) => {
