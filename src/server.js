@@ -1,6 +1,7 @@
 import express from 'express'
 import configviewEngine from './configs/viewEngine.js'
 import initWebRoutes from './route/web.js'
+import connectDB from './configs/connectDB.js'
 
 require('dotenv').config();
 
@@ -15,8 +16,11 @@ app.use(express.json());
 // config view engine
 configviewEngine(app);
 
+// connect to MongoDB
+// connectDB.main;
+
 // init all web routes
-initWebRoutes(app);
+// initWebRoutes(app);
 
 // handle 404 not found
 app.use((req, res) => {

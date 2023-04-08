@@ -1,11 +1,10 @@
 import express from 'express'
+import Controller from '../controller/Controller'
 
 let router = express.Router();
 
 const initWebRoutes = (app) => { 
-    router.get('/', (req, res) => {
-        res.render('uploadFile.ejs');
-    })
+    router.get('/', Controller.getHomePage)
 
     return app.use('/', router)
 } 
