@@ -6,7 +6,6 @@ const connectionString = process.env.MONGO_URI || "";
 
 const client = new MongoClient(connectionString);
 
-
 async function connectToDb() {
   let conn;
   try {

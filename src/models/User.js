@@ -1,8 +1,8 @@
 import { client } from "../configs/connectDB";
 
-async function getAllDataUser(client) {
+async function getAllDataUser() {
   try {
-    const result = await client.db("DataUsers").collection("Users").findOne({});
+    const result = await client.db("DataUsers").collection("Users").find().toArray();
     console.log("check >>>", result);
     return result;
   } catch (error) {
@@ -11,4 +11,6 @@ async function getAllDataUser(client) {
   return null;
 }
 
-export { getAllDataUser };
+export default {
+  getAllDataUser,
+};
