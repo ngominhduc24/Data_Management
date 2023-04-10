@@ -4,11 +4,13 @@ import Controller from '../controller/Controller'
 let router = express.Router();
 
 const initWebRoutes = (app) => { 
-    router.get('/', Controller.getHomePage)
+    router.get('/', Controller.getHomePage);
 
-    // router.post('/details/user/:userId', Controller.DetailsUser)
+    router.post('/', Controller.createNewUser);
+    
+    router.get('/details/user/:userId', Controller.DetailsUser);
 
-    return app.use('/', router)
+    return app.use('/', router);
 } 
 
 // export default initWebRoutes;
