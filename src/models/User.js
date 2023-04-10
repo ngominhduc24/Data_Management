@@ -1,5 +1,5 @@
 import { client } from "../configs/connectDB";
-const mongo = require("mongodb");
+import { ObjectId } from "mongodb";
 
 async function getAllDataUser() {
   try {
@@ -15,12 +15,13 @@ async function getAllDataUser() {
   return null;
 }
 
-async function findDataUserById(Userid) {
+async function findDataUserById(User_id) {
   try {
+    const objectId = new ObjectId(User_id);
     const result = await client
       .db("DataUsers")
       .collection("Users")
-      .findOne({ id: Userid });
+      .findOne({ _id: objectId });
     return result;
   } catch (error) {
     console.log(error);
@@ -41,8 +42,44 @@ async function createNewUser(data) {
   return null;
 }
 
+async function deleteUser(User_id) {
+  try {
+    const objectId = new ObjectId(User_id);
+    let doc = await findDataUserById(User_id);
+    let result = await client
+      .db("DataUsers")
+      .collection("Users")
+      .deleteOne({ _id: objectId });
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
+}
+
+async function updateUser(data) {
+  try {
+    const objectId = new ObjectId(data.userId); 
+    let query = { _id: objectId };
+    // delete data.userId;
+    delete data.userId;
+    const updates = {
+      $set: data
+    };
+    let result = await client
+      .db("DataUsers")
+      .collection("Users")
+      .updateOne(query, updates);
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
+}
+
 export default {
   getAllDataUser,
   findDataUserById,
   createNewUser,
+  deleteUser,
+  updateUser,
 };
