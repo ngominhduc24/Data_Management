@@ -5,7 +5,7 @@ import {connectToDb} from './configs/connectDB'
 
 let morgan = require('morgan');
 const app = express()
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 5001
 
 app.use(morgan('combined'));
 app.use(express.urlencoded({ extended: true }));
