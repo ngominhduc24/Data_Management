@@ -1,7 +1,7 @@
 import express from 'express'
 import configviewEngine from './configs/viewEngine'
 import initWebRoutes from './route/web'
-import {connectToDb} from './configs/connectDB'
+import connectDB from './configs/connectDB'
 
 let morgan = require('morgan');
 const app = express()
@@ -15,7 +15,8 @@ app.use(express.json());
 configviewEngine(app);
 
 // connect to db
-connectToDb();
+connectDB();
+
 // init all web routes
 initWebRoutes(app);
 
