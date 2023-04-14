@@ -42,10 +42,10 @@
                         <td>
                             <a href="/details/user/<%= dataUser[i].id%>"> Details</a>
 
-                            <form action="/update-user/<%= dataUser[i].id%>" method="GET">
+                            <form action="/edit/user/<%= dataUser[i].id%>" method="GET">
                                 <button type="submit">Update</button>
                             </form>
-                            <form action="/delete-user" method="POST">
+                            <form action="/delete-user" method="post">
                                 <input type="text" hidden name="userId" value="<%= dataUser[i].id%>" />
                                 <button type="submit">Delete</button>
                             </form>
