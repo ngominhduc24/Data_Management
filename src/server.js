@@ -1,11 +1,11 @@
 import express from 'express'
 import configviewEngine from './configs/viewEngine'
-import initWebRoutes from './route/web'
+import initAPIRoutes from './route/api'
 import connectDB from './configs/connectDB'
 
 let morgan = require('morgan');
 const app = express()
-const port = process.env.PORT || 5001
+const port = process.env.PORT || 3000
 
 app.use(morgan('combined'));
 app.use(express.urlencoded({ extended: true }));
@@ -17,8 +17,8 @@ configviewEngine(app);
 // connect to db
 connectDB();
 
-// init all web routes
-initWebRoutes(app);
+// init all api routes
+initAPIRoutes(app);
 
 // handle 404 not found
 app.use((req, res) => {
