@@ -9,7 +9,7 @@ async function connectDB() {
     await mongoose.connect(connectionString, { dbName: "DataUsers" });
     console.log("Database connected");
   } catch (error) {
-    console.log(err);
+    console.log(error);
   }
 }
 
