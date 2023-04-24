@@ -10,12 +10,6 @@ const initWebRoutes = (app) => {
     
     router.get('/details/user/:userId', Controller.DetailsUser);
 
-    router.get('/edit/user/:userId', Controller.GetEditUser);
-
-    router.post('/edit/user/:userId', Controller.UpdateUser);
-
-    router.post('/delete-user', Controller.DeleteUser);
-
     return app.use('/', router);
 } 
 

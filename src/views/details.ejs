@@ -28,26 +28,28 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
+                <% for(let i=0; i<dataUser.length; i++) { %>
                     <tr>
                         <td>
-                            <%= dataUser.id%>
+                            <%= dataUser[i].id%>
                         </td>
                         <td>
-                            <%= dataUser.firstName%>
+                            <%= dataUser[i].firstName%>
                         </td>
                         <td>
-                            <%= dataUser.lastName%>
+                            <%= dataUser[i].lastName%>
                         </td>
                         <td> 
-                            <form action="/update-user/<%= dataUser._id%>" method="GET">
+                            <form action="/update-user/<%= dataUser[i]._id%>" method="GET">
                                 <button type="submit">Update</button>
                             </form>
                             <form action="/delete-user" method="POST">
-                                <input type="text" hidden name="userId" value="<%= dataUser._id%>" />
+                                <input type="text" hidden name="userId" value="<%= dataUser[i]._id%>" />
                                 <button type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
+                    <% } %>
             </table>
         </div>
     </div>
