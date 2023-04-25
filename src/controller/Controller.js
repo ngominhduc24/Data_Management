@@ -1,6 +1,5 @@
 import User from "../models/User";
 
-<<<<<<< HEAD
 let getHomePage = async (req, res) => {
   const data = await User.find();
   return res.render("index.ejs", { dataUser: data });
@@ -10,10 +9,6 @@ let DetailsUser = async (req, res) => {
   let userId = req.params.userId;
   const rows = await User.findById(userId);
   return res.render("details.ejs", { dataUser: rows });
-=======
-  const rows = await User.findById(userId);
-  return res.status(200).json({ data: rows });
->>>>>>> Develop_API
 };
 
 let createNewUser = async (req, res) => {
@@ -39,7 +34,9 @@ let GetEditUser = async (req, res) => {
 let UpdateUser = async (req, res) => {
   let userId = req.params.userId;
   let data = req.body;
-  await User.updateOne({ _id: userId }, data).then(() => console.log("User updated"));
+  await User.updateOne({ _id: userId }, data).then(() =>
+    console.log("User updated")
+  );
   return res.redirect("/");
 };
 
