@@ -20,8 +20,7 @@
     "express": "4.17.1",
     "mongodb": "5.2.0",
     "mongoose": "7.0.3",
-    "morgan": "1.10.0",
-    "nodemon": "2.0.12"
+    "morgan": "1.10.0"
   },
   "repository": {
     "type": "git",
