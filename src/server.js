@@ -25,6 +25,4 @@ app.use((req, res) => {
   res.send("404.ejs");
 });
 
-app.listen(port, () => {
-  console.log(`app run in : http://localhost:${port}/`);
-});
+module.exports = app;
