@@ -1,27 +1,14 @@
 import User from "../models/User";
 
-<<<<<<< HEAD
-let getHomePage = async (req, res) => {
-  let rows = await User.getAllDataUser();
-  return res.render("index.ejs", { dataUser: rows });
-=======
 let getAllUser = async (req, res) => {
   const data = await User.find();
   return res.status(200).json({ data });
->>>>>>> Develop_API
 };
 
 let DetailsUser = async (req, res) => {
   let userId = req.params.userId;
-<<<<<<< HEAD
-  let data = await User.findDataUserById(userId);
-  // object to array
-  let rows = [data];
-  return res.render("details.ejs", { dataUser: rows });
-=======
   const rows = await User.findById(userId);
   return res.status(200).json({ data: rows });
->>>>>>> Develop_API
 };
 
 let createNewUser = async (req, res) => {
