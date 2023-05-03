@@ -5,7 +5,6 @@ import connectDB from "./configs/connectDB";
 
 let morgan = require("morgan");
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(morgan("combined"));
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +21,7 @@ initAPIRoutes(app);
 
 // handle 404 not found
 app.use((req, res) => {
-  res.send("404.ejs");
+  res.render("404");
 });
 
 module.exports = app;
