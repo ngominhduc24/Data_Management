@@ -1,8 +1,7 @@
 import express from "express";
 
 const configviewEngine = (app) => {
-  // app.use(express.static("./src/public"));
-  app.use(express.static(__dirname + "/public"));
+  app.use(express.static("./src/public"));
   app.set("views", "./src/views");
 };
 
