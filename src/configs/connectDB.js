@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 
 require("dotenv").config();
 
-const connectionString =
-  "mongodb+srv://tutorial:123456aA@cluster0.2kd9tza.mongodb.net/?retryWrites=true&w=majority";
+const connectionString = process.env.MONGO_URI || "";
 
 async function connectDB() {
   try {
