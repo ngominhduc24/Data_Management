@@ -2,7 +2,7 @@ import express from "express";
 import configviewEngine from "./configs/viewEngine";
 import initAPIRoutes from "./route/api";
 import connectDB from "./configs/connectDB";
-import { path } from "app-root-path";
+import path from "path";
 
 let morgan = require("morgan");
 const app = express();
@@ -22,7 +22,8 @@ initAPIRoutes(app);
 
 // handle 404 not found
 app.use((req, res) => {
-  res.status(404).send("Not found");
+  // res.status(404).send("Not found");
+  res.sendFile(path.join(__dirname + "/views/404.html"));
 });
 
 module.exports = app;
