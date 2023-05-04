@@ -1,8 +1,14 @@
 import User from "../models/User";
 
 let getAllUser = async (req, res) => {
-  const data = await User.find();
-  return res.status(200).json({ data });
+  try {
+    const data = await User.find();
+    if (data) {
+      return res.status(200).json({ data });
+    }
+  } catch (error) {
+    return res.status(400).json({ message: error.message || "Error" });
+  }
 };
 
 let DetailsUser = async (req, res) => {
