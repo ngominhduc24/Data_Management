@@ -22,7 +22,6 @@ initAPIRoutes(app);
 
 // handle 404 not found
 app.use((req, res) => {
-  // res.status(404).send("Not found");
   res.sendFile(path.join(__dirname + "/views/404.html"));
 });
 
