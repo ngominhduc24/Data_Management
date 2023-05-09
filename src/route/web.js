@@ -1,17 +1,13 @@
-import express from 'express'
-import Controller from '../controller/Controller'
+import express from "express";
+import Controller from "../controller/ControllerWeb";
 
 let router = express.Router();
 
-const initWebRoutes = (app) => { 
-    router.get('/', Controller.getHomePage);
+const initWebRoutes = (app) => {
+  router.get("/", Controller.getChatPage);
 
-    router.post('/', Controller.createNewUser);
-    
-    router.get('/details/user/:userId', Controller.DetailsUser);
-
-    return app.use('/', router);
-} 
+  return app.use("/", router);
+};
 
 // export default initWebRoutes;
 module.exports = initWebRoutes;

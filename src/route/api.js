@@ -1,11 +1,11 @@
 import express from "express";
-import Controller from "../controller/Controller";
+import Controller from "../controller/ControllerAPI";
 
 let router = express.Router();
 
 const initAPIRoutes = (app) => {
   router.get("/user", Controller.getAllUser);
-  
+
   router.get("/user/:userId", Controller.DetailsUser);
 
   router.post("/addUser", Controller.createNewUser);

@@ -1,6 +1,6 @@
 import express from "express";
 import configviewEngine from "./configs/viewEngine";
-import initAPIRoutes from "./route/api";
+import initWebRoutes from "./route/web";
 import connectDB from "./configs/connectDB";
 import path from "path";
 
@@ -17,8 +17,8 @@ configviewEngine(app);
 // connect to db
 connectDB();
 
-// init all api routes
-initAPIRoutes(app);
+// init all web routes
+initWebRoutes(app);
 
 // handle 404 not found
 app.use((req, res) => {
